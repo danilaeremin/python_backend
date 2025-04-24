@@ -1934,7 +1934,8 @@ PYBIND11_EMBEDDED_MODULE(c_python_backend_utils, module)
           py::return_value_policy::reference)
       .def("has_error", &InferResponse::HasError)
       .def("error", &InferResponse::Error)
-      .def("parameters", &InferResponse::Parameters);
+      .def("parameters", &InferResponse::Parameters)
+      .def("is_last_response", &InferResponse::IsLastResponse);
 
   py::class_<ResponseSender, std::shared_ptr<ResponseSender>>(
       module, "InferenceResponseSender")
